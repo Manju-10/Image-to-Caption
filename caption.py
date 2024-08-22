@@ -2,10 +2,9 @@ import requests
 import streamlit as st
 import base64
 
-def get_img_as_base64(file):
-    with open(file, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+def get_img_as_base64(url):
+    response = requests.get(url)
+    return base64.b64encode(response.content).decode()
 
 img = get_img_as_base64("https://wallpapercave.com/wp/ibG1tbs.jpg")
 
