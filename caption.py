@@ -6,7 +6,8 @@ def get_img_as_base64(url):
     response = requests.get(url)
     return base64.b64encode(response.content).decode()
 
-img = get_img_as_base64("https://wallpapercave.com/wp/ibG1tbs.jpg")
+img_url = "https://wallpapercave.com/wp/ibG1tbs.jpg"
+img = get_img_as_base64(img_url)
 
 page_bg_img = f"""
 <style>
